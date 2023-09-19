@@ -56,7 +56,7 @@ public class BankSystem {
         } else if (overdraftLimit < 0) {
             System.out.println("Overdraft limit cannot be negative");
             return;
-        } else if (account.balance() - overdraftLimit < 0) {
+        } else if (overdraftLimit < account.balance()) {
             // overdraftLimit lower than balance
             System.out.println("Overdraft limit cannot be lowered than balance");
             return;
