@@ -8,7 +8,6 @@ public class BankSystem {
     private final HashMap<AccountId, Account> accounts = new HashMap<>();
     private final ArrayList<Transaction> transactions = new ArrayList<>();
 
-
     AccountId clearingAccountId;
 
     public BankSystem() {
