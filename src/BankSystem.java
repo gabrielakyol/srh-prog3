@@ -49,7 +49,7 @@ public class BankSystem {
         if (account == null) {
             System.out.println("Account not found");
             return;
-        } else if (!account.isAccountActive()) {
+        } else if (account.isTheAccountActive()) {
             System.out.println("Account is not active");
             return;
         } else if (overdraftLimit < 0) {
@@ -111,7 +111,7 @@ public class BankSystem {
         if (sourceAccount == null) {
             System.out.println("Sender Account not found");
             return;
-        } else if (!sourceAccount.isAccountActive()) {
+        } else if (sourceAccount.isTheAccountActive()) {
             System.out.println("Sender Account is not active");
             return;
         }
@@ -120,7 +120,7 @@ public class BankSystem {
         if (targetAccount == null) {
             System.out.println("Receiver Account not found");
             return;
-        } else if (!targetAccount.isAccountActive()) {
+        } else if (targetAccount.isTheAccountActive()) {
             System.out.println("Receiver Account is not active");
             return;
         }
@@ -155,7 +155,7 @@ public class BankSystem {
             if (account == null) {
                 System.out.println("Account not found");
                 return;
-            } else if (!account.isAccountActive()) {
+            } else if (account.isTheAccountActive()) {
                 System.out.println("Account is not active");
                 return;
             }

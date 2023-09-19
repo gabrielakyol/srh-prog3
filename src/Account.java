@@ -10,6 +10,10 @@ public record Account(
         );
     }
 
+    public boolean isTheAccountActive() {
+        return !isActive;
+    }
+
     public Account updateBalance(double balance){
         return new Account(
                 accountId, overdraftLimit, balance, isActive
