@@ -1,48 +1,28 @@
-public class Account {
-    private final Integer accountNumber;
-    private final String BranchCode;
-    private double overdraftLimit;
-    private double balance;
-    private boolean isActive;
-
-    public Account (Integer accountNumber, String BranchCode, double overdraftLimit) {
-        this.accountNumber = accountNumber;
-        this.BranchCode = BranchCode;
-        this.overdraftLimit = overdraftLimit;
-        this.balance = 0;
-        this.isActive = true;
+public record Account(
+        AccountId accountId,
+        double overdraftLimit,
+        double balance,
+        boolean isActive)
+{
+    public Account updateActive(boolean isActive) {
+        return new Account(
+                accountId, overdraftLimit, balance, isActive
+        );
     }
 
-    // get
-    public double getBalance() {
-        return balance;
-    }
-
-    // account number
-    public Integer getAccountNumber() {
-        return accountNumber;
-    }
-
-    // branch code
-    public String getBranchCode() {
-        return BranchCode;
-    }
-
-    // overdraft limit
-    public double getOverdraftLimit() {
-        return overdraftLimit;
-    }
-
-    // is active
-    public boolean getIsActive() {
+    public boolean isAccountActive() {
         return isActive;
     }
 
-
-    // set
-    // set overdraft limit
-    public void setOverdraftLimit(double overdraftLimit) {
-        this.overdraftLimit = overdraftLimit;
+    public Account updateBalance(double balance){
+        return new Account(
+                accountId, overdraftLimit, balance, isActive
+        );
     }
 
+    public Account updateOverdraftLimit(double overdraftLimit){
+        return new Account(
+                accountId, overdraftLimit, balance, isActive
+        );
+    }
 }
