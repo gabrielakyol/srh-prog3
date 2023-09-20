@@ -1,3 +1,5 @@
-public record Company() {
-    static String tickerSymbol;
+public record Company(
+        String companyName,
+        String tickerSymbol
+) {
 }
